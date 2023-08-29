@@ -17,3 +17,42 @@ jobs:
           repo: 'python-test'           # Your Cloudsmith Repository name (slug)
           republish: 'true'            # needed ONLY if version is not changing
           file: "hello-0.0.0-py3-none-any.whl" # Python package filename
+
+      - uses: actions/checkout@v1
+      - name: Push
+        id: push
+        uses: cloudsmith-io/action@master
+        with:
+          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+          command: "push"
+          format: "python"
+          owner: 'jake-org'               # Your Cloudsmith account name or org name (namespace)
+          repo: 'python-test'           # Your Cloudsmith Repository name (slug)
+          republish: 'true'            # needed ONLY if version is not changing
+          file: "hello-0.0.1-py3-none-any.whl" # Python package filename
+
+      - uses: actions/checkout@v1
+      - name: Push
+        id: push
+        uses: cloudsmith-io/action@master
+        with:
+          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+          command: "push"
+          format: "python"
+          owner: 'jake-org'               # Your Cloudsmith account name or org name (namespace)
+          repo: 'python-test'           # Your Cloudsmith Repository name (slug)
+          republish: 'true'            # needed ONLY if version is not changing
+          file: "hello-0.0.3-py3-none-any.whl" # Python package filename
+          
+      - uses: actions/checkout@v1
+      - name: Push
+        id: push
+        uses: cloudsmith-io/action@master
+        with:
+          api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+          command: "push"
+          format: "python"
+          owner: 'jake-org'               # Your Cloudsmith account name or org name (namespace)
+          repo: 'python-test'           # Your Cloudsmith Repository name (slug)
+          republish: 'true'            # needed ONLY if version is not changing
+          file: "h.whl" # Python package filename
