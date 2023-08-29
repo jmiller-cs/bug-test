@@ -1,0 +1,22 @@
+name: Cloudsmith Push Raw File 3
+on: push
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    name: Raw Push 3
+    steps:
+    - uses: actions/checkout@v1
+    - name: Push
+      id: push
+      uses: cloudsmith-io/action@master
+      with:
+        api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
+        command: 'push'
+        format: 'raw'
+        owner: 'jake-org'              # Your Cloudsmith account name or org name (namespace) 
+        repo: 'raw-test'          # Your Cloudsmith Repository name (slug)
+        file: 'raw3.txt'        # Name of file 
+        name: 'raw3'                # Name for Raw package
+        summary: 'raw3'          # Optional Summary for Raw Package
+        description: 'raw3'  # Optional description for Raw package
+        version: ${{ github.sha }}
